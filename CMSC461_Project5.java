@@ -43,11 +43,11 @@ public class CMSC461_Project5{
             
             while (rs.next()){
                String output = rs.getString(1) + "\t" +
-                               rs.getString(2) + "\t" +
-                               rs.getString(3) + "\t" +
-                               rs.getString(4) + "\t" +
+                               rs.getString(2) + "          " +
+                               rs.getString(3) + "               " +
+                               rs.getString(4) + "          " +
                                rs.getString(5) + "\t" +
-                               rs.getString(6) + "\t" + 
+                               rs.getString(6) + "         " + 
                                rs.getString(7);
                System.out.println(output);
             }
@@ -80,15 +80,15 @@ public class CMSC461_Project5{
             
             String sql2 = "SELECT distinct * " +
                           " from STUDENT" + 
-                          " order by STUDENT.NAME";
+                          " order by STUDENT.ID";
             ResultSet rs2 = stmt.executeQuery(sql2);
             
-            System.out.println("\nName\tID\tMajor\tCredits");
-            System.out.println("-----------------------------");
+            System.out.println("\nID\tName\t Major\t\tCredits");
+            System.out.println("-----------------------------------------");
             while (rs2.next()){
-               String output = rs2.getString(2) + "\t" +
-                               rs2.getString(1) + "\t" +
-                               rs2.getString(3) + "\t" + 
+               String output = rs2.getString(1) + "\t" +
+                               rs2.getString(2) + "\t " +
+                               rs2.getString(3) + "\t     " + 
                                rs2.getString(4);
                System.out.println(output);
             }
@@ -132,15 +132,15 @@ public class CMSC461_Project5{
             
             String sql3 = "SELECT distinct * " +
                           " from INSTRUCTOR" + 
-                          " order by INSTRUCTOR.NAME";
+                          " order by INSTRUCTOR.ID";
             ResultSet rs3 = stmt.executeQuery(sql3);
             
-            System.out.println("\nName\tID\tDepartment\tSalary");
-            System.out.println("--------------------------------------------------------" + 
+            System.out.println("\nID\tName\t\tDepartment\tSalary");
+            System.out.println("----------------------------------------------" + 
                                "-----------------------------");
             while (rs3.next()){
-               String output = rs3.getString(2) + "\t" + 
-                               rs3.getString(1) + "\t" +
+               String output = rs3.getString(1) + "\t" + 
+                               rs3.getString(2) + "\t\t" +
                                rs3.getString(3) + "\t" +
                                rs3.getString(4);
                System.out.println(output);
